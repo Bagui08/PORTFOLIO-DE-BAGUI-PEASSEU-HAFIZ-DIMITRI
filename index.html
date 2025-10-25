@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Dimitri</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Étudiant Télécom</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="show">
+    <img src="images/ma_photo.jpeg" alt="Photo de Dimitri" class="profile">
+    <h1>Salut, je suis <span>BAGUI PEASSEU HAFIZ DIMITRI</span></h1>
+    <p>Ingénieur en devenir, passionné par les réseaux et la connectivité.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>À propos de moi</h2>
+    <div class="about-content">
+      <p>
+        Je suis un étudiant passionné par le monde des télécommunications, avec un intérêt particulier pour les réseaux, la fibre optique et les systèmes radio. Curieux, rigoureux et motivé, j’aime comprendre comment les technologies connectent le monde et facilitent la communication. Mon objectif est de devenir un professionnel compétent, capable de concevoir, installer et superviser des infrastructures de télécommunication modernes. Au cours de ma formation, j’ai acquis des compétences en installation de fibre optique, routage et commutation, systèmes radio et programmation réseau. J’aime apprendre de nouvelles technologies et relever des défis techniques pour développer des solutions fiables et innovantes. Je crois que la communication est le cœur de la société moderne et je veux contribuer à la rendre toujours plus performante et accessible à tous.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Mes Compétences</h2>
+    <div class="skills-grid">
+      <div class="skill"><img src="images/image 1.jpg" alt="Fibre Optique"><p>Installation Fibre Optique</p></div>
+      <div class="skill"><img src="images/image 2.jpg" alt="Routage"><p>Routage & Commutation</p></div>
+      <div class="skill"><img src="images/image 4.jpg" alt="Radio"><p>Systèmes Radio</p></div>
+      <div class="skill"><img src="images/image 3.jpg" alt="Programmation"><p>Programmation Réseau</p></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Mes Projets</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="images/ftth.jpg" alt="Projet FTTH">
+        <h3>Réseau FTTH</h3>
+        <p>Conception d’un réseau d’accès en fibre optique pour une zone urbaine.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/asterisk.jpg" alt="Mini-standard">
+        <h3>Mini-standard téléphonique</h3>
+        <p>Simulation d’un système IP avec Asterisk et Raspberry Pi.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/supervision.jpg" alt="Supervision réseau">
+        <h3>Application de supervision</h3>
+        <p>Interface web de surveillance d’un réseau LAN.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contactez-moi</h2>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="27c0f2dc-3626-400e-ad56-1c8948ed40f7">
+      <input type="text" name="name" placeholder="Votre nom" required>
+      <input type="email" name="email" placeholder="Votre e-mail" required>
+      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Étudiant Télécom - Tous droits réservés.
+  </footer>
+
+  <script>
+    // Menu Responsive
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+
+    // Animation au scroll
+    const sections = document.querySelectorAll('section');
+    const showSection = () => {
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) sec.classList.add('show');
+      });
+    };
+    window.addEventListener('scroll', showSection);
+    showSection();
+  </script>
+</body>
+</html>
